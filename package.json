@@ -1,0 +1,28 @@
+{
+  "name": "tw-hackathon-2017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henryteigar/TW-Hackathon-2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henryteigar/TW-Hackathon-2017/issues"
+  },
+  "homepage": "https://github.com/henryteigar/TW-Hackathon-2017#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "jsonwebtoken": "^7.3.0",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.9.5"
+  }
+}
