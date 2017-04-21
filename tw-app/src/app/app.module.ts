@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { CameraComponent } from './components/camera/camera.component';
 import { ClientComponent } from './components/client/client.component';
 
+
+
+
 const appRoutes: Routes = [
   { path: '', component: ClientComponent },
   { path: 'camera', component: CameraComponent}
@@ -17,7 +20,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CameraComponent,
-    ClientComponent
+    ClientComponent,
   ],
   imports: [
     BrowserModule,
