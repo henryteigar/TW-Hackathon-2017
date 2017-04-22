@@ -13,6 +13,8 @@ export class ClientComponent {
   user: FirebaseObjectObservable<any>;
   testName: String = 'Karl';
   plate;
+  accessGranted: String = 'B58BPS';
+
 
   constructor(private af: AngularFire, private router: Router) {
     af.database.object('/user/' + this.testName).subscribe(
@@ -21,6 +23,16 @@ export class ClientComponent {
         this.licensePlate = af.database.object('/licenseplate/' + data.plate);
         this.plate = data.plate;
       });
+
+    af.database.object('/licenseplate/' + this.accessGranted).subscribe(
+      data => {
+        if(data.askConfirm == false) {
+          this.router.navigateByUrl("/login");
+        } 
+    });
+    
+
+    
   }
 
   accept() {

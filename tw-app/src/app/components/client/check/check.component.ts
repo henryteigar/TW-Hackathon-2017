@@ -11,7 +11,7 @@ export class CheckComponent implements OnInit {
   constructor() {
     setTimeout (() => {
       this.switchView();
-    }, 1000)
+    }, 1500)
   }
 
   switchView() {
