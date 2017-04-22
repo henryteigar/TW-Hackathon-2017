@@ -1,6 +1,16 @@
-<h2>webcam:</h2>
-<!-- Define <video> object to hold webcam image -->
-<video [src]="videosrc" class="cssWebCam"></video>
+<!DOCTYPE html>
+<html>
 
-<p>See app/webcam/webcam.html for HTML, see app/webcam/webcam.css for CSS. </p>
-<p>Automatic streaming is enabled. </p>
+<head>
+  <title>Nice image capture button</title>
+</head>
+
+<body>
+  <form method="post">
+    <label class="cameraButton">
+      <input type="file" accept="image/*" (change)="fileChange($event)" capture="camera" />
+    </label>
+  </form>
+</body>
+
+</html>

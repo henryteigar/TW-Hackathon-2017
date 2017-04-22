@@ -1,4 +1,11 @@
-.cssWebCam{
-	width: 480px;
-	height: 480px;
+label.cameraButton {
+  display: inline-block;
+  height: 1000px;
+  width: 1000px;
+  margin: 0px;
+  
+}
+
+input {
+  display: none;
 }

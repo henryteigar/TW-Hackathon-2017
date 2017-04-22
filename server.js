@@ -26,6 +26,9 @@ app.use(bodyParser.json());
 
 // ROUTES
 // =======================================
+app.get('/test', (req, res) => {
+  res.sendfile("./test.html");
+});
 app.get('/', (req,res) => {
   res.sendFile(__dirname + "/index.html");
 });

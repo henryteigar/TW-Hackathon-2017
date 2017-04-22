@@ -1,5 +1,11 @@
-import {Component, OnInit, ElementRef} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import { Http, Headers, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'app-camera',
@@ -7,53 +13,45 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./camera.component.css']
 })
 export class CameraComponent implements OnInit {
-  public videosrc:any;
+  response: Observable<Response>;
+  apiRes: {
+    results: Array<{plate}>
+  };
 
-  constructor(private sanitizer:DomSanitizer, private element:ElementRef) { }
+  constructor(private http:Http) { 
+    
+  }
+  
+
+
+  fileChange(event) {
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+        let file: File = fileList[0];
+        let formData:FormData = new FormData();
+        formData.append('image', file);
+        
+        console.log(file);
+        let headers = new Headers();
+        
+        this.http.post('https://api.openalpr.com/v2/recognize?secret_key=sk_62007cebbad350de52a3443b&recognize_vehicle=0&country=eu&return_image=0&topn=10', formData, { headers: headers })
+        .map(res => res.json()).subscribe(data => {
+          this.apiRes = data;
+          
+          console.log(this.apiRes.results[0].plate);
+        });
+
+        
+        // this.response.subscribe(data => {
+          
+        // });
+    }
+}
 
   ngOnInit() {
-    this.showCam();
+    console.log("fff");
   }
 
-  private showCam() {
-        // 1. Casting necessary because TypeScript doesn't
-        // know object Type 'navigator';
-        let nav = <any>navigator;
-
-        // 2. Adjust for all browsers
-        nav.getUserMedia = nav.getUserMedia || nav.mozGetUserMedia || nav.webkitGetUserMedia;
-
-        // 3. Trigger lifecycle tick (ugly, but works - see (better) Promise example below)
-        //setTimeout(() => { }, 100);
-
-        // 4. Get stream from webcam
-        nav.getUserMedia(
-            {video: true},
-            (stream) => {
-                let webcamUrl = URL.createObjectURL(stream);
-
-                // 4a. Tell Angular the stream comes from a trusted source
-                this.videosrc = this.sanitizer.bypassSecurityTrustUrl(webcamUrl);
-
-                // 4b. Start video element to stream automatically from webcam.
-                this.element.nativeElement.querySelector('video').autoplay = true;
-            },
-            (err) => console.log(err));
-
-
-        // OR: other method, see http://stackoverflow.com/questions/32645724/angular2-cant-set-video-src-from-navigator-getusermedia for credits
-        var promise = new Promise<string>((resolve, reject) => {
-            nav.getUserMedia({video: true}, (stream) => {
-                resolve(stream);
-            }, (err) => reject(err));
-        }).then((stream) => {
-            let webcamUrl = URL.createObjectURL(stream);
-            this.videosrc = this.sanitizer.bypassSecurityTrustResourceUrl(webcamUrl);
-            // for example: type logic here to send stream to your  server and (re)distribute to
-            // other connected clients.
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
+ 
 
 }
