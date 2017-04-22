@@ -1,8 +1,10 @@
-<p>Waiting for response</p>
-
-<div *ngIf="(licensePlate | async)?.askConfirm == true">
-    <h1>Kas tangid oma autot {{plate}}?</h1>
-    <button (click)="accept()">Accept</button>
-    <button (click)="decline()">Decline</button>
+<div *ngIf="(licensePlate | async)?.askConfirm == true" class="wrapper">
+    <div class="confirmbox">
+        <div class="namebox">MK</div>
+        <p>Are you taking gar right now?</p>
+        <p class="license">{{ plate }}</p>
+        <button (click)="accept()" class="accept">Yes</button>
+        <button (click)="decline()" class="decline">No</button>
+    </div>
 </div>
 
