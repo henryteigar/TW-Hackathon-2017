@@ -3,21 +3,36 @@
         position: fixed;
         top: -20px;
         right: 0px;
-        
+        transition: top 1.5s;
     }
 
     .lowerWave {
         position: fixed;
         bottom: -20px;
         width: 100%;
+        transition: bottom 1.5s;
         // bottom: 0px;
     }
+
+    .upperWaveGone {
+        top: -400px;
+    }
+
+    .lowerWaveGone {
+        bottom: -400px;
+    }
+
 
     .logo {
         position: relative;
         width: 100%;
         height: 100px;
         margin: 50% auto;
+        transition: left 1.5s;
+    }
+
+    .logoGone {
+        left: 400px;
     }
 
     .car {

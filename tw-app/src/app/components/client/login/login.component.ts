@@ -11,6 +11,25 @@ export class LoginComponent {
 
   accessGranted: String = '264BCM';
   response;
+  gone = false;
+
+  notNow() {
+    if (this.gone) {
+      return 'upperWaveGone';
+    }
+  }
+
+  notNow2() {
+    if (this.gone) {
+      return 'lowerWaveGone';
+    }
+  }
+
+  notNow3() {
+    if (this.gone) {
+      return 'logoGone';
+    }
+  }
 
   constructor(private af: AngularFire, private router: Router) {
     console.log("asd1")
@@ -18,7 +37,10 @@ export class LoginComponent {
     af.database.object('/licenseplate/' + this.accessGranted).subscribe(
       data => {
         if(data.askConfirm == true) {
-          this.router.navigateByUrl("/");
+          this.gone = true;
+          setTimeout (() => {
+            this.router.navigateByUrl("/");
+          }, 800)
         }  
       });
   }
