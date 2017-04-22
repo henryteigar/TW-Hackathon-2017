@@ -13,7 +13,7 @@ export class ClientComponent {
   user: FirebaseObjectObservable<any>;
   testName: String = 'Karl';
   plate;
-  accessGranted: String = 'B58BPS';
+  accessGranted: String = '264BCM';
 
 
   constructor(private af: AngularFire, private router: Router) {

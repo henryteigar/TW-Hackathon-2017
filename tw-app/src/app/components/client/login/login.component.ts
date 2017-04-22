@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  accessGranted: String = 'B58BPS';
+  accessGranted: String = '264BCM';
   response;
 
   constructor(private af: AngularFire, private router: Router) {
