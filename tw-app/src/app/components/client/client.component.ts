@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.css']
 })
-export class ClientComponent implements OnInit {
+export class ClientComponent {
 
-  constructor() { }
+  licensePlate: FirebaseObjectObservable<any>;
 
-  ngOnInit() {
+  constructor(af: AngularFire) {
+    this.licensePlate = af.database.object('/licenseplate/486HJF');
   }
 
 }

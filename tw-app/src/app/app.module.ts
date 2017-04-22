@@ -8,8 +8,16 @@ import { AppComponent } from './app.component';
 import { CameraComponent } from './components/camera/camera.component';
 import { ClientComponent } from './components/client/client.component';
 
+import { AngularFireModule } from 'angularfire2';
 
-
+export const firebaseConfig = {
+  apiKey: "AIzaSyDxJ3Qs7iM24wZaO7SCmCVrkIXN_FDVLg0",
+  authDomain: "tw-project-8f89e.firebaseapp.com",
+  databaseURL: "https://tw-project-8f89e.firebaseio.com",
+  projectId: "tw-project-8f89e",
+  storageBucket: "tw-project-8f89e.appspot.com",
+  messagingSenderId: "1083843472362"
+};
 
 const appRoutes: Routes = [
   { path: '', component: ClientComponent },
@@ -26,7 +34,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
