@@ -17,12 +17,11 @@ export class CameraComponent implements OnInit {
   apiRes: {
     results: Array<{plate}>
   };
+  text;
 
   constructor(private http:Http) { 
     
   }
-  
-
 
   fileChange(event) {
     let fileList: FileList = event.target.files;
@@ -38,13 +37,13 @@ export class CameraComponent implements OnInit {
         .map(res => res.json()).subscribe(data => {
           this.apiRes = data;
           
-          console.log(this.apiRes.results[0].plate);
-        });
-
-        
-        // this.response.subscribe(data => {
+          if (this.apiRes.results.length != 0) {
+            this.text = this.apiRes.results[0].plate;
+          } else {
+            this.text = "No response";
+          }
           
-        // });
+        }, err => console.log("No response"));
     }
 }
 
