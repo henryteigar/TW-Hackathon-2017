@@ -40,8 +40,9 @@ export class CameraComponent implements OnInit {
           this.apiRes = data;
           
           if (this.apiRes.results.length != 0) {
-            const items = this.af.database.list('licenseplate');
-            items.push(this.apiRes.results[0].plate);
+            this.af.database.object('/licenseplate/' + this.apiRes.results[0].plate).set({ 
+              askConfirm: true
+            });
             this.text = this.apiRes.results[0].plate;
           } else {
             this.text = "No response";
