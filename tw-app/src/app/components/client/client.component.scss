@@ -96,27 +96,3 @@
         }
     }
 }
-
-.confirmed {
-    background: linear-gradient($lightOrange, $darkOrange) !important;
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    padding-top: 100px;
-
-    img {
-        display: block;
-        margin: 70px auto;
-        
-    }
-    .text {
-            margin-top: 100px;
-    }
-
-    .linnuke {
-        margin-top: 200px;
-    }
-    
-}

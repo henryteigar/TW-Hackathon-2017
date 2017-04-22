@@ -6,8 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./check.component.scss']
 })
 export class CheckComponent implements OnInit {
+  showConfirmed = true;
 
-  constructor() { }
+  constructor() {
+    setTimeout (() => {
+      this.switchView();
+    }, 1000)
+  }
+
+  switchView() {
+    this.showConfirmed = !this.showConfirmed;
+  }
 
   ngOnInit() {
   }

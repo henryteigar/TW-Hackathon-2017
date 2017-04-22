@@ -1,4 +1,4 @@
-<div class="confirm" *ngIf="false">
+<div class="confirm">
     <img class="upperWave" src="/assets/images/upperWave.png">
     <div *ngIf="(licensePlate | async)?.askConfirm == true" class="wrapper">
         <div class="confirmbox">
@@ -10,9 +10,4 @@
         </div>
     </div>
     <img class="lowerWave" src="/assets/images/lowerWave.png">
-</div>
-
-<div class="confirmed" *ngIf="true">
-   <img src="/assets/images/confirmed.png">
-   <img src="/assets/images/linnuke.png">
 </div>

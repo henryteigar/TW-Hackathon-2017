@@ -1,2 +1,12 @@
-<img class="upperWave" src="/assets/images/upperWave.png">
-<img src="/assets/images/tsekk.png">
+<div class="confirmed" *ngIf="showConfirmed">
+    <img src="/assets/images/confirmed.png">
+    <img src="/assets/images/linnuke.png">
+ </div>
+
+<div *ngIf="!showConfirmed">
+    <a [routerLink]="['/login']">
+        <img class="check" src="/assets/images/tsekk.png">
+    </a>
+    <img class="upperWave" src="/assets/images/tsekkLaine.png">
+    
+</div>
