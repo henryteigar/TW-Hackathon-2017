@@ -1,33 +1,99 @@
-.upperWave {
-    position: fixed;
-    top: -20px;
-    right: 0px;
-    
+.entry {
+    .upperWave {
+        position: fixed;
+        top: -20px;
+        right: 0px;
+        
+    }
+
+    .lowerWave {
+        position: fixed;
+        bottom: -20px;
+        width: 100%;
+        // bottom: 0px;
+    }
+
+    .logo {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        margin: 50% auto;
+    }
+
+    .car {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .brand {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
 }
 
-.lowerWave {
-    position: fixed;
-    bottom: -20px;
-    width: 100%;
-    // bottom: 0px;
+.login {
+    .upperWave {
+        position: fixed;
+        top: -20px;
+        right: 0px;
+        
+    }
+
+    .loginForm {
+        margin-top: 50%;
+        form {
+            .email {
+                background: url('/assets/images/formEmail.png');
+                background-repeat: no-repeat;
+                background-position-x: 45px;
+                background-position-y: 4px;
+            }
+
+            .password {
+                background: url('/assets/images/formPassword.png');
+                background-repeat: no-repeat;
+                background-position-x: 45px;
+            }
+
+            margin: 0 auto;
+            display: block;
+            // width: 80%;
+            input {
+                display: block;
+                border: 0px;
+                outline: none;
+                width: calc(80% - 40px);
+                border-bottom: 2px solid white;
+                background: none;
+                margin: 0 auto;
+                color: white;
+                height: 25px;
+                font-size: 14px;
+                margin-bottom: 15px;
+                padding-left: 40px;
+                
+            
+            }
+            ::-webkit-input-placeholder {
+               color: white !important;
+               font-weight: 100;
+            }
+        }
+        .submit {
+            width: 80%;
+            height: 56px;
+            background: white;
+            border: 0px;
+            margin: 50px auto;
+            display: block;
+            bottom: 20px;
+            color: #F66C00;
+            font-size: 13px;
+        }
+    }
+
 }
 
-.logo {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin: 50% auto;
-}
-
-.car {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
-.brand {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-}
