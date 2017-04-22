@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  showWelcome = false
-  showLogin = !this.showWelcome;
+export class LoginComponent {
 
+  accessGranted: String = 'B58BPS';
+  response;
 
-  constructor() { }
+  constructor(private af: AngularFire, private router: Router) {
+    console.log("asd1")
 
-  ngOnInit() {
+    af.database.object('/licenseplate/' + this.accessGranted).subscribe(
+      data => {
+        if(data.askConfirm == true) {
+          this.router.navigateByUrl("/");
+        }  
+      });
   }
-
-  onSubmit() {
-    this.showWelcome = !this.showWelcome;
-    this.showLogin = !this.showWelcome;
-  }
-
 }

@@ -32,7 +32,7 @@ export class ClientComponent {
   decline() {
     this.licensePlate.update({ askConfirm: false });
     this.licensePlate.update({ response: false });
-    this.router.navigateByUrl("/response");
+    this.router.navigateByUrl("/login");
   }
 
 }
