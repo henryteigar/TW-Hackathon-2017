@@ -1,84 +1,122 @@
 @import "../../../assets/global";
-
-h1 {
-    font-size: 30px;
-}
-
-p {
-    font-size: 20px;
-}
-
-
-button {
-    width: 60px;
-    height: 30px;
-    background: none;
-    border: 2px solid gray;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #aaaaaa;
-}
-
-.wrapper {
-    text-align: center;
-    margin-top: 180px;
-
-    .confirmbox {
-        text-align: center;
-        padding-top: 15px;
-        background: white;
-        border-radius: 10px;
-        display: inline-block;
+.confirm {
+    .upperWave {
+        position: fixed;
+        top: -60px;
+        right: 0px;
         
-        .namebox {
-            display: inline;
-            background: $profileOrange;
-            border-radius: 8px;
-            padding: 11px;
-            font-size: 20px;
-            color: white;
-            font-weight: 100;
-        }
+    }
 
-        p {
-            font-size: 14px;
-            padding: 13px 60px 0px 60px;
-            font-weight: 200;
-            color: $background;
+    .lowerWave {
+        position: fixed;
+        bottom: -130px;
+        width: 100%;
+        // bottom: 0px;
+    }
 
-            &.license {
-                padding-top: 0px;
-                margin-top: 0px;
-                margin-bottom: 8px;
-                font-size: 17px;
-                font-weight: 400;
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+
+    button {
+        width: 60px;
+        height: 30px;
+        background: none;
+        border: 2px solid gray;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #aaaaaa;
+    }
+
+    .wrapper {
+        text-align: center;
+        margin-top: 220px;
+
+        .confirmbox {
+            text-align: center;
+            padding-top: 15px;
+            background: white;
+            border-radius: 10px;
+            display: inline-block;
+            
+            .namebox {
+                display: inline;
+                background: $profileOrange;
+                border-radius: 8px;
+                padding: 11px;
+                font-size: 20px;
+                color: white;
+                font-weight: 100;
             }
-        }
 
-        button {
-            margin: 0;
-            border: 0;
-            height: 50px;
-            width: 50%;
-            float: left;
-            font-size: 16px;
-            color: $lightOrange;
-            background: linear-gradient(white, $lightgray);
+            p {
+                font-size: 16px;
+                padding: 13px 60px 0px 60px;
+                font-weight: 200;
+                color: $background;
 
-            &.accept {
-                border-top: 1px solid $lightgray;
-                border-right: 1px solid $lightgray;
-                border-bottom-left-radius: 10px;
+                &.license {
+                    padding-top: 0px;
+                    margin-top: 0px;
+                    margin-bottom: 8px;
+                    font-size: 17px;
+                    font-weight: 400;
+                }
             }
 
-            &.decline {
-                border-top: 1px solid $lightgray;
-                border-left: 1px solid $lightgray;
-                border-bottom-right-radius: 10px;
+            button {
+                margin: 0;
+                border: 0;
+                height: 50px;
+                width: 50%;
+                float: left;
+                font-size: 16px;
+                color: $lightOrange;
+                background: linear-gradient(white, $lightgray);
+
+                &.accept {
+                    border-top: 1px solid $lightgray;
+                    border-right: 1px solid $lightgray;
+                    border-bottom-left-radius: 10px;
+                }
+
+                &.decline {
+                    border-top: 1px solid $lightgray;
+                    border-left: 1px solid $lightgray;
+                    border-bottom-right-radius: 10px;
+                }
             }
         }
     }
 }
 
+.confirmed {
+    background: linear-gradient($lightOrange, $darkOrange) !important;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding-top: 100px;
+
+    img {
+        display: block;
+        margin: 70px auto;
+        
+    }
+    .text {
+            margin-top: 100px;
+    }
+
+    .linnuke {
+        margin-top: 200px;
+    }
+    
+}
