@@ -1,0 +1,7 @@
+<div *ngIf="(licensePlate | async)?.response == true">
+    SUCCESS
+</div>
+
+<div *ngIf="(licensePlate | async)?.response == false">
+    DECLINED
+</div>

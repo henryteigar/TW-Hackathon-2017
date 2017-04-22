@@ -1,3 +1,7 @@
-<div *ngIf="(licensePlate | async)?.confirm">
-  asd
+Waiting for response
+
+<div *ngIf="(licensePlate | async)?.askConfirm == true">
+    <button (click)="accept()">Accept</button>
+    <button (click)="decline()">Decline</button>
 </div>
+

@@ -9,6 +9,8 @@ import { CameraComponent } from './components/camera/camera.component';
 import { ClientComponent } from './components/client/client.component';
 
 import { AngularFireModule } from 'angularfire2';
+import { ConfigComponent } from './components/client/config/config.component';
+import { ResponseComponent } from './components/client/response/response.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDxJ3Qs7iM24wZaO7SCmCVrkIXN_FDVLg0",
@@ -21,7 +23,9 @@ export const firebaseConfig = {
 
 const appRoutes: Routes = [
   { path: '', component: ClientComponent },
-  { path: 'camera', component: CameraComponent}
+  { path: 'camera', component: CameraComponent},
+  { path: 'config', component: ConfigComponent},
+  { path: 'response', component: ResponseComponent},
 ]
 
 @NgModule({
@@ -29,6 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     CameraComponent,
     ClientComponent,
+    ConfigComponent,
+    ResponseComponent,
   ],
   imports: [
     BrowserModule,
