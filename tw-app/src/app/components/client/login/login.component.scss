@@ -42,6 +42,13 @@
         
     }
 
+    .lowerWave {
+        position: fixed;
+        bottom: -100px;
+        width: 100%;
+        // bottom: 0px;
+    }
+
     .loginForm {
         margin-top: 50%;
         form {
@@ -93,6 +100,12 @@
             color: #F66C00;
             font-size: 13px;
         }
+        .submit:active {
+            outline: none;
+
+        }
+        .submit:focus {outline:0;}
+
     }
 
 }
