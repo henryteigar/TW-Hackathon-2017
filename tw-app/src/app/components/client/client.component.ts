@@ -26,7 +26,7 @@ export class ClientComponent {
   accept() {
     this.licensePlate.update({ askConfirm: false });
     this.licensePlate.update({ response: true });
-    this.router.navigateByUrl("/response");
+    this.router.navigateByUrl("/check");
   }
 
   decline() {
