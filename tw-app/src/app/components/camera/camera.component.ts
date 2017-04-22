@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
+import {AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 
 @Component({
@@ -18,9 +19,10 @@ export class CameraComponent implements OnInit {
     results: Array<{plate}>
   };
   text;
+  af: any;
 
-  constructor(private http:Http) { 
-    
+  constructor(private http:Http, af: AngularFire) { 
+    this.af = af;
   }
 
   fileChange(event) {
@@ -38,6 +40,8 @@ export class CameraComponent implements OnInit {
           this.apiRes = data;
           
           if (this.apiRes.results.length != 0) {
+            const items = this.af.database.list('licenseplate');
+            items.push(this.apiRes.results[0].plate);
             this.text = this.apiRes.results[0].plate;
           } else {
             this.text = "No response";
