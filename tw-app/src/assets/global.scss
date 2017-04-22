@@ -2,9 +2,11 @@ $profileOrange: #F6A623;
 $background: #30333E;
 $lightOrange: #FF7200;
 $darkOrange: #FF3E00;
+$lightgray: #D8D8D8;
 
 html, body {
-    height: 100%;
+    padding: 0px;
+    margin: 0px;
     width: 100%;
     background: $background;
 }
