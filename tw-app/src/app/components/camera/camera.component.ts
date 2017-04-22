@@ -11,7 +11,7 @@ import {AngularFire, FirebaseObjectObservable } from 'angularfire2';
 @Component({
   selector: 'app-camera',
   templateUrl: './camera.component.html',
-  styleUrls: ['./camera.component.css']
+  styleUrls: ['./camera.component.scss']
 })
 export class CameraComponent implements OnInit {
   response: Observable<Response>;
@@ -53,7 +53,6 @@ export class CameraComponent implements OnInit {
 }
 
   ngOnInit() {
-    console.log("fff");
   }
 
  
